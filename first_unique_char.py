@@ -4,7 +4,8 @@ def first_unique_char(sentence):
     counts = Counter(sentence)
     for char in sentence:
         if counts[char] == 1:
-            print(f'The first unique character in "{sentence}" is {char}')
-            break
+            return char
+        else:
+            return None
 
-first_unique_char("now is the time")
+print (first_unique_char("now is the time"))
