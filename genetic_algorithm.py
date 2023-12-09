@@ -3,7 +3,7 @@ import random
 #Constants
 TARGET_PHRASE = "Hello, World!"
 POPULATION_SIZE = 100
-MUTATION_RATE = 0.01
+MUTATION_RATE = 0.02
 
 #Generate initial population
 def generate_population():
@@ -30,7 +30,6 @@ def select_parents(population):
 
 # Create offspring through crossover
 def crossover(parents):
-    # print("parents", parents)
     offspring = ""
     crossover_point = random.randint(0, len(TARGET_PHRASE) - 1)
     for i in range(len(TARGET_PHRASE)):
@@ -64,6 +63,8 @@ def genetic_algorithm():
         new_population = []
         for _ in range(POPULATION_SIZE // 2):
             parents = select_parents(population)
+            # if parents[0] == parents[1]:
+            #     # print(parents)
             offspring = crossover(parents)
             mutated_offspring = mutate(offspring)
             new_population.extend([offspring, mutated_offspring])
