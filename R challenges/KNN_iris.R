@@ -21,4 +21,4 @@ model = knn(train = train_data[, -5], test = test_data[, -5], cl = train_data[, 
 accuracy = sum(model == test_data[, 5]) / nrow(test_data)
 
 # print the accuracy
-cat("The accuracy of the k-NN classifier on the testin set is:", accuracy)
+cat("The accuracy of the k-NN classifier on the testing set is:", accuracy)
