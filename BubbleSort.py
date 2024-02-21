@@ -1,3 +1,4 @@
+# largest value bubbles to the right with each iteration
 def bubble_sort(arr):
     n = len(arr)
 
